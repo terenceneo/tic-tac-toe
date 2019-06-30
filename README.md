@@ -12,4 +12,13 @@ Some concepts learned and applied include:
 - Immutability of states for undo-redo operations
 - Functional components
 
-<img style="float: right;" src="Screenshot.png">
+.image-right {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  @include media($medium) {
+    float: right;
+    margin-left: $gutter;
+  }
+}
+![](Screenshot.png){: .img-right}
