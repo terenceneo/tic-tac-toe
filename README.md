@@ -11,3 +11,5 @@ Some concepts learned and applied include:
 - Passing data through props (creating controlled components
 - Immutability of states for undo-redo operations
 - Functional components
+
+![](Screenshot.png)
