@@ -6,9 +6,23 @@ import './index.css';
  * Renders a single <button>
  */
 class Square extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      value: null,
+    };
+  }
+
   render() {
     return (
-      <button className="square">
+      /*
+      Notice how with onClick={() => alert('click')}, we’re passing
+      a function as the onClick prop. React will only call this function
+      after a click. Forgetting () => and writing onClick={alert('click')}
+      is a common mistake, and would fire the alert every time the component
+      re-renders.
+      */
+      <button className="square" onClick={() => { alert('click');}}>
         {this.props.value}
       </button>
     );
