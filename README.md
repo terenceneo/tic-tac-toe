@@ -1,5 +1,5 @@
 # Tic Tac Toe
-**Tic Tac Toa game created using react following the react official tutorial [here](https://reactjs.org/tutorial/tutorial.html)**
+**Tic Tac Toe game created using react following the react official tutorial [here](https://reactjs.org/tutorial/tutorial.html)**
 
 Features:
 - Alternating inputs 'X' and 'O'
