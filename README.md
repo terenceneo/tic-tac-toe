@@ -12,6 +12,7 @@ Some concepts learned and applied include:
 - Immutability of states for undo-redo operations
 - Functional components
 
+<style type="text/css">
 .image-right {
   display: block;
   margin-left: auto;
@@ -21,4 +22,7 @@ Some concepts learned and applied include:
     margin-left: $gutter;
   }
 }
+</style>
+
 ![](Screenshot.png){: .img-right}
+
