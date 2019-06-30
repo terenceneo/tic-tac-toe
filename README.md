@@ -12,4 +12,4 @@ Some concepts learned and applied include:
 - Immutability of states for undo-redo operations
 - Functional components
 
-<img align="right" src="Screenshot.png">
+<img style="float: right;" src="Screenshot.png">
