@@ -22,8 +22,8 @@ class Square extends React.Component {
       is a common mistake, and would fire the alert every time the component
       re-renders.
       */
-      <button className="square" onClick={() => { alert('click');}}>
-        {this.props.value}
+      <button className="square" onClick={() => this.setState({value: 'X'})}>
+        {this.state.value}
       </button>
     );
   }
