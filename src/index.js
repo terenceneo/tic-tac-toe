@@ -5,33 +5,49 @@ import './index.css';
 /**
  * Renders a single <button>
  */
-class Square extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      value: null,
-    };
-  }
+// class Square extends React.Component {
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//       value: null,
+//     };
+//   }
 
-  render() {
-    return (
-      /*
-      Notice how with onClick={() => alert('click')}, we’re passing
-      a function as the onClick prop. React will only call this function
-      after a click. Forgetting () => and writing onClick={alert('click')}
-      is a common mistake, and would fire the alert every time the component
-      re-renders.
-      */
-      <button
-        className="square"
-        // onClick={() => this.setState({value: 'X'})}
-        onClick={() => this.props.onClick()} //onClick function provided by Board
-      >
-        {this.props.value}
-      </button>
-    );
-  }
+//   render() {
+//     return (
+//       /*
+//       Notice how with onClick={() => alert('click')}, we’re passing
+//       a function as the onClick prop. React will only call this function
+//       after a click. Forgetting () => and writing onClick={alert('click')}
+//       is a common mistake, and would fire the alert every time the component
+//       re-renders.
+//       */
+//       <button
+//         className="square"
+//         // onClick={() => this.setState({value: 'X'})}
+//         onClick={() => this.props.onClick()} //onClick function provided by Board
+//       >
+//         {this.props.value}
+//       </button>
+//     );
+//   }
+// }
+
+/**
+ * Square as a function component.
+ * Only contains a render method and don't have their own state
+ */
+function Square(props) {
+  return (
+    <button
+      className = "square"
+      onClick = {props.onClick} //note lack of () after onClick
+    >
+      {props.value}
+    </button>
+  );
 }
+
 
 /**
  * Renders 9 squares
@@ -41,11 +57,12 @@ class Board extends React.Component {
     super(props);
     this.state = { //private, cannot be updated from child classes
       squares: Array(9).fill(null), //squares = new array of size 9 filled with null
+      xIsNext: true,
     };
   }
 
   handleClick(i) {
-    const squares = this.state.squares.slice();
+    const squares = this.state.squares.slice(); //create a copy to be modified
     squares[i] = 'X';
     this.setState({squares: squares});
   }
