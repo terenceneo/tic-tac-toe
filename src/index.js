@@ -22,8 +22,12 @@ class Square extends React.Component {
       is a common mistake, and would fire the alert every time the component
       re-renders.
       */
-      <button className="square" onClick={() => this.setState({value: 'X'})}>
-        {this.state.value}
+      <button
+        className="square"
+        // onClick={() => this.setState({value: 'X'})}
+        onClick={() => this.props.onClick()} //onClick function provided by Board
+      >
+        {this.props.value}
       </button>
     );
   }
@@ -33,8 +37,27 @@ class Square extends React.Component {
  * Renders 9 squares
  */
 class Board extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = { //private, cannot be updated from child classes
+      squares: Array(9).fill(null), //squares = new array of size 9 filled with null
+    };
+  }
+
+  handleClick(i) {
+    const squares = this.state.squares.slice();
+    squares[i] = 'X';
+    this.setState({squares: squares});
+  }
+
   renderSquare(i) {
-    return <Square value={i}/>;
+    return (
+      <Square
+        // passing 2 props from board to square
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)} //board's handleClick() method
+      />
+    );
   }
 
   render() {
